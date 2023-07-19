@@ -71,6 +71,12 @@
   }
 }
 
+@media screen and (max-width: 760px) {
+  .prompt_layout {
+    width: 100%;
+  }
+}
+
 /* Tailwind Styles */
 
 .app {

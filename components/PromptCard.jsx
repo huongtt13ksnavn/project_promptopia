@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { useRouter } from "next/router"
 import { useState } from "react"
 
-const PromptCard = ({ post, handleEdit, handleDelete }) => {
+const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession()
   const pathName = usePathname()
   const [copied, setCopied] = useState('')
@@ -40,9 +40,9 @@ const PromptCard = ({ post, handleEdit, handleDelete }) => {
         </div>
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
-      <p className="font-inter text-sm blue_gradient cursor-pointer"
-        onClick={() => handleClickTag && handleClickTag(post.tag)}
+      <p className="my-4 font-satoshi text-sm text-gray-700 break-words">{post.prompt}</p>
+      <p className="font-inter text-sm blue_gradient cursor-pointer break-words"
+        onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
         #{post.tag}
       </p>

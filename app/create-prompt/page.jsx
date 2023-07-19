@@ -16,9 +16,8 @@ const CreatePrompt = () => {
     const createForm = async (e) => {
         e.preventDefault()
         setSubmitting(true)
-        console.log(post);
         try {
-            const respone = await fetch('/api/prompt/new', {
+            const response = await fetch('/api/prompt/new', {
                 method: 'POST',
                 body: JSON.stringify({
                     prompt: post.prompt,
@@ -26,8 +25,8 @@ const CreatePrompt = () => {
                     tag: post.tag
                 })
             })
-            if (respone.ok) {
-                router.push('/')
+            if (response.ok) {
+                router.push('/profile')
             }
         } catch (error) {
             console.log(error);
