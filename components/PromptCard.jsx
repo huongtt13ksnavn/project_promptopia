@@ -10,9 +10,6 @@ const PromptCard = ({ post, handleEdit, handleDelete }) => {
   const { data: session } = useSession()
   const pathName = usePathname()
   const [copied, setCopied] = useState('')
-  const handleClickTag = () => {
-
-  }
   const handleCopy = () => {
     setCopied(post.prompt)
     navigator.clipboard.writeText(post.prompt)
@@ -47,7 +44,7 @@ const PromptCard = ({ post, handleEdit, handleDelete }) => {
       <p className="font-inter text-sm blue_gradient cursor-pointer"
         onClick={() => handleClickTag && handleClickTag(post.tag)}
       >
-        {post.tag}
+        #{post.tag}
       </p>
 
       {session?.user.id === post.creator._id && pathName === '/profile' && (
